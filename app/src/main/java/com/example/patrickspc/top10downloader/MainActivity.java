@@ -19,6 +19,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String mFileContents;
     private Button btnParse;
     private ListView listApps;
 
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO: Add parse atictvation code
+                ParseApplications parseApplications = new ParseApplications(mFileContents);
+                parseApplications.process();
+
             }
         });
         listApps = (ListView) findViewById(R.id.xmlListView);
@@ -43,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private class DownloadData extends AsyncTask<String, Void, String> {
-
-        private String mFileContents;
 
         @Override
         protected String doInBackground(String... params) {
