@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 //TODO: Add parse atictvation code
             }
         });
-        listApps = (ListView) findViewById(R.id.xmlTextView);
+        listApps = (ListView) findViewById(R.id.xmlListView);
         DownloadData downloadData = new DownloadData();
         downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
     }
